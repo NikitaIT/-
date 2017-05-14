@@ -1,0 +1,63 @@
+.menu-main 
+  margin: 0px 0 5px
+  list-style: none
+  //margin: 40px 0 5px
+  padding: 25px 0 5px
+  text-align: center
+  li 
+    display: inline-block
+  li:after
+    content: "|"
+    color: $light-brown
+    display: inline-block
+    vertical-align: top
+  li:last-child:after 
+    content: none
+  a
+    text-decoration: none
+    font-family: 'Ubuntu Condensed', sans-serif
+    letter-spacing: 2px
+    position: relative
+    padding-bottom: 20px
+    margin: 0 34px 0 30px
+    font-size: 17px
+    text-transform: uppercase
+    display: inline-block
+    transition: color .2s
+    color: $white
+    &:visited 
+      color: $white
+    &.current, 
+    &:hover 
+      color: $accent
+      &:before
+        left: 0
+      &:after
+        right: 0
+    &:before,
+    &:after 
+      content: ""
+      position: absolute
+      height: 4px
+      top: auto
+      right: 50%
+      bottom: -5px
+      left: 50%
+      background: $accent
+      transition: .8s
+  .current
+    &:before 
+      left: 0
+    &:after 
+      right: 0
+  
+@media (max-width: 550px) 
+  .menu-main 
+    padding-top: 0
+    li 
+      display: block
+      &:after 
+        content: none
+    a 
+      padding: 25px 0 20px
+      margin: 0 30px

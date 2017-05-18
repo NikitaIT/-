@@ -1,30 +1,65 @@
 ///
 // owlCarousel
 ///
-$(function() {
-//	$('.carousel-hookahs').on('initialized.owl.carousel', function(){
-//		setTimeout(function(){
-//			carouselService();
-//		}, 50)
-//	});
+$(function () {
+            //	$('.carousel-hookahs').on('initialized.owl.carousel', function(){
+            //		setTimeout(function(){
+            //			carouselService();
+            //		}, 50)
+            //	});
 
-	$('.carousel-hookahs').owlCarousel({
-		dots: false,
-		nav: true,
-        loop: true,
-        autoplay:true,
-        autoplayTimeout:1000,
-        autoplayHoverPause:true,
-		smartSpeed: 700,
-		navText: ['<i class="fa fa-arrow-circle-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>'],
-		responsiveClass: true,
-		responsive: {
-			0: {
-				items: 1
-			}
-		}
-	});
+            $('.carousel-hookahs').owlCarousel({
+                dots: false,
+                nav: true,
+                loop: true,
+                autoplay: true,
+                autoplayTimeout: 1000,
+                autoplayHoverPause: true,
+                smartSpeed: 700,
+                transitionStyle: "fadeUp", //Currently available: "fade", "backSlide", "goDown", "fadeUp"
+                afterMove: function () {
+                    animateSmoke();
+                },
+                navText: ['<i class="fa fa-arrow-circle-left" aria-hidden="true"></i>', '<i class="fa fa-arrow-circle-right" aria-hidden="true"></i>'],
+                responsiveClass: true,
+                responsive: {
+                    0: {
+                        items: 1
+                    }
+                }
+            });
 
+            function animateSmoke() {
+                //       	$('.owl-item.active .item').css({
+                //        	'backround-position-x': '0'
+                //        });
+                //        $('.owl-item.active .item').animate({
+                //					'background-position-x': '-60px'
+                //				}, 10000, 'linear');
+            }
+
+            animateSmoke();
+            
+            //Яндекс карты начало
+            ymaps.ready(init);
+            var myMap,
+                myPlacemark;
+
+            function init() {
+                myMap = new ymaps.Map("map", {
+                    center: [55.76, 37.64],
+                    zoom: 7
+                });
+
+                myPlacemark = new ymaps.Placemark([55.76, 37.64], {
+                    hintContent: 'Москва!',
+                    balloonContent: 'Столица России'
+                });
+
+                myMap.geoObjects.add(myPlacemark);
+            }
+            //Яндекс карты конец
+    
 //	function carouselService(){
 //		$('.carousel-hookahs-item').each(function(){
 //			var ths  = $(this),
@@ -117,6 +152,6 @@ $(function() {
 });
 
 
-$(window).on('load', function(){
-	$('.preloader').delay(500).fadeOut('slow');
+$(window).on('load', function () {
+    $('.preloader').delay(500).fadeOut('slow');
 })

@@ -1,9 +1,14 @@
+
 @import "fonts"
 @import "libs"
 @import "vars"
 @import "header/header"
 @import "header/menu"
 @import "s-hookahs/owl"
+@import "elements/button"
+@import "elements/map"
+@import "elements/section"
+
 
 *::-webkit-input-placeholder
 	color: #666
@@ -20,6 +25,8 @@
 *:-ms-input-placeholder
 	color: #666
 	opacity: 1
+
+
 
 
 html, body
@@ -49,56 +56,6 @@ body
   line-height: 1.4
   font-weight: normal
 
-.button
-	display: inline-block
-	border: none
-	color: #fff
-	text-decoration: none
-	background-color: $accent
-	padding: 16px 45px
-	font-size: 13px
-	text-transform: uppercase
-	font-weight: 600
-	letter-spacing: 3px
-	border-radius: 2px
-	text-align: center
-	position: relative
-	outline: none
-	transition: background-color .1s ease
-	&::after
-		transition: background-color .2s ease
-		position: absolute
-		content: ''
-		height: 4px
-		bottom: 0
-		width: 100%
-		background-color: darken($accent, 50%)
-		opacity: .18
-		border-bottom-left-radius: 2px
-		border-bottom-right-radius: 2px
-		left: 0
-	&:focus, &:hover
-		text-decoration: none
-		color: #fff
-	&:hover
-		background-color: lighten($accent, 5%)
-		&::after
-			opacity: .22
-	&:active
-		background-color: darken($accent, 5%)
-		&::after
-			opacity: .32
-	&.button-white
-		background-color: #fff
-		color: #444
-		&::after
-			background-color: rgba(#000, 0.6)
-		&:hover
-			&::after
-				background-color: rgba(#000, 0.2)
-		&:active
-			&::after
-				background-color: rgba(#000, 0.4)
 
 .text-center
 	text-align: center
@@ -182,8 +139,6 @@ section
 	&.inverse
 		color: white
 		background-color: $dark
-		&.s-call
-			background-color: #FFF
 	.h2
 		font-size: 30px
 		font-weight: normal
@@ -443,42 +398,6 @@ $colors: $blue, $red, $accent
 	.owl-item
 		backface-visibility: inherit
 
-.s
-	&-king, &-review, &-partners
-		padding: 5% 0
-	&-king
-		p
-			margin: 30px 0
-			font-size: 18px
-	&-call
-		background-size: contain
-		background-repeat: no-repeat
-		background-position: 10%
-		&:before
-			content: ''
-			width: 50%
-			right: 0
-			height: 100%
-			position: absolute
-			background-color: rgba($accent, 0.92)
-	&-partners.section-overley
-		&:before
-			background-color: #FFF	
-		.h2
-			margin-top: 10px
-			span
-				color: $accent
-
-.section-overley
-	&::before
-		content: ''
-		position: absolute
-		top: 0
-		left: 0
-		width: 100%
-		height: 100%
-		background-color: $over
-		opacity: 0.40
 
 .my-header >
   .section-overley
@@ -576,6 +495,8 @@ select
 			filter: blur(10px)
 
 
+
+
 .callback
 	padding: 25% 0
 	position: relative
@@ -589,30 +510,39 @@ select
 	.formhead
 		margin: 0
 		font-size: 30px
-		color: white
+		color: $white
 
 	p
 		margin-top: 0
-	
-	input, textarea, select,
+
+.callback
+	.formhead
+		text-align: center;
+		border-bottom: solid $dark-brown 3px
+	input,
+	textarea,
+	select,
 	.selectize-control .selectize-input, 
 	.selectize-control.single .selectize-input.input-active
-		color: white
+		background: rgba($white,0.4)
+		color: $white
 		width: 100%
 		margin-top: 17px
+		border-bottom: solid $dark-brown 3px
 		&::-webkit-input-placeholder
-			color: white
+			color: $dark-brown
 		&::-moz-placeholder
-			color: white
+			color: $dark-brown
 			opacity: 1
 		&::-ms-input-placeholder
-			color: white
+			color: $dark-brown
 		option
 			color: #333
+	
 
 	.button
 		margin-top: 40px
-
+	
 .reviews
 	text-align: center
 	.owl-dots

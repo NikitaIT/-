@@ -8,18 +8,31 @@
     background-size: inherit;
     &.section-overley
         &::before
-            background-color: $dark-brown
-            opacity: 0.10
+            background-color: darken(rgb(31, 14, 3),0%)
+            opacity: 0.7
+    .container-none
+         margin: auto
+         width: 100%;
+    text-align: center
+    
 .carousel-hookahs
     margin: auto
     &.owl-carousel.owl-loaded
-        display: flex
     .owl-nav
-        margin: auto
-    .owl-buttons .owl-prev 
-        left: 0;
-    .owl-buttons .owl-next 
-        right: 0;
+        position: absolute
+        width: 100%
+        top: calc(50% - 72pt/2)
+        div
+            position: absolute;
+        
+        .owl-prev 
+            left: calc(18% - 72pt/2);
+        .owl-next 
+            right: calc(18% - 72pt/2);
+        .fa
+            font-size: 72pt
+            color: $accent
+            opacity: 0.40
     
 .carousel-hookahs-item    
 

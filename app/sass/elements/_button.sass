@@ -1,0 +1,92 @@
+//Круглый вариант
+.button
+	display: inline-block
+	border: solid $dark-brown 4px
+	color: $accent
+	text-decoration: none
+	background: none
+	padding: 16px 45px
+	font-size: 13px
+	text-transform: uppercase
+	font-weight: 600
+	letter-spacing: 3px
+	border-radius: 55px
+	text-align: center
+	position: relative
+	outline: none
+	transition: background-color .1s ease
+	&:focus, &:hover
+		text-decoration: none
+		color: $white
+	&:hover
+		background-color: lighten(rgba(100, 47, 7, 0.44), 5%)
+		&::after
+			opacity: .22
+	&:active
+		background-color: darken(rgba(100, 47, 7, 0.44), 5%)
+		&::after
+			opacity: .32
+	&.button-white
+		background-color: $white
+		color: #444
+		&::after
+			background-color: rgba(#000, 0.6)
+		&:hover
+			&::after
+				background-color: rgba(#000, 0.2)
+		&:active
+			&::after
+				background-color: rgba(#000, 0.4)
+
+//Квадратный вариант
+
+//.button
+//	display: inline-block
+//	border: solid $dark-brown 4px
+//	color: $dark-brown
+//	text-decoration: none
+//	background-color: $white
+//	padding: 16px 45px
+//	font-size: 13px
+//	text-transform: uppercase
+//	font-weight: 600
+//	letter-spacing: 3px
+//	border-radius: 2px
+//	text-align: center
+//	position: relative
+//	outline: none
+//	transition: background-color .1s ease
+//	&::after
+//		transition: background-color .2s ease
+//		position: absolute
+//		content: ''
+//		height: 4px
+//		bottom: 0
+//		width: 100%
+//		background-color: darken($accent, 50%)
+//		opacity: .18
+//		border-bottom-left-radius: 2px
+//		border-bottom-right-radius: 2px
+//		left: 0
+//	&:focus, &:hover
+//		text-decoration: none
+//		color: #fff
+//	&:hover
+//		background-color: lighten($accent, 5%)
+//		&::after
+//			opacity: .22
+//	&:active
+//		background-color: darken($accent, 5%)
+//		&::after
+//			opacity: .32
+//	&.button-white
+//		background-color: $white
+//		color: #444
+//		&::after
+//			background-color: rgba(#000, 0.6)
+//		&:hover
+//			&::after
+//				background-color: rgba(#000, 0.2)
+//		&:active
+//			&::after
+//				background-color: rgba(#000, 0.4)
